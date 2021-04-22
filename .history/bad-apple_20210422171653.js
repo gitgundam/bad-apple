@@ -10,7 +10,7 @@ try
 catch (err) {
   alert('视频加载失败!')
 }
-document.body.appendChild(video)
+
 
 
 

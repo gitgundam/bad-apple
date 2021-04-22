@@ -2,15 +2,15 @@ let txtDiv = document.querySelector('#txt')
 // let video = document.querySelector('#video')
 let video = document.createElement("video")
 video.setAttribute("autoplay", "ture");
-
+document.body.appendChild(video)
 try 
 {
-  video.setAttribute("src", "https://gitgundam.github.io/bad-apple/bad-apple.mp4")
+  video.setAttribute("src", "/https://gitgundam.github.io/bad-apple/bad-apple.mp4")
 }
 catch (err) {
   alert('视频加载失败!')
 }
-document.body.appendChild(video)
+
 
 
 
