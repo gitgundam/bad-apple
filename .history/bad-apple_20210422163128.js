@@ -1,5 +1,5 @@
 let txtDiv = document.querySelector('#txt')
-let video = document.querySelector('#video')
+// let video = document.querySelector('#video')
 // let video = document.createElement("video")
 // video.setAttribute("autoplay", "ture");
 // document.body.appendChild(video)

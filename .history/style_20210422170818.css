@@ -24,10 +24,10 @@ p {
 }
 
 video {
-    /* position: absolute; */
+    position: absolute;
     border: 1px solid #000;
     /* 四比三的视频比例 */
     width: calc( 50vh * 4/3);
     height: 50vh;
-    /* transform: translateX(-100%); */
+    transform: translateX(-100%);
 }
