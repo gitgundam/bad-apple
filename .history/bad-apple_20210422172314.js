@@ -2,7 +2,7 @@ let txtDiv = document.querySelector('#txt')
 // let video = document.querySelector('#video')
 let video = document.createElement("video")
 video.setAttribute("autoplay", "ture");
-video.setAttribute("webkit-playsinline", "ture")
+webkit-playsinline
 try 
 {
   video.setAttribute("src", "https://gitgundam.github.io/bad-apple/bad-apple.mp4")
@@ -36,7 +36,7 @@ let toText = function (g) {
   } else if (g > 210 && g <= 240) {
     return ';';
   } else {
-    return ' ';
+    return '.';
   }
 }
 
@@ -66,7 +66,7 @@ const init = () => {
   //获取图片数组后,遍历数组的rgb值转换为灰度
   let html = '';
   for (h = 0; h < imgDataHeight; h += 12) {
-    let p = '<pre>';
+    let p = '<p>';
 
     for (w = 0; w < imgDataWidth; w += 6.5) {
       let index = (w + imgDataWidth * h) * 4;
@@ -76,7 +76,7 @@ const init = () => {
       let gray = getGray(r, g, b);
       p += toText(gray);
     }
-    p += '</pre>';
+    p += '</p>';
     html += p;
 
   }
