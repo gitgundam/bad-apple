@@ -1,17 +1,20 @@
 const img = document.querySelector('#img')
 const txtDiv = document.querySelector('#txt')
-const video = document.createElement("video")
-video.setAttribute("autoplay", "ture");
-video.setAttribute("webkit-playsinline", "ture")
-try {
-  video.setAttribute("src", "https://gitgundam.github.io/bad-apple/bad-apple.mp4")
-}
-catch (err) {
-  alert('视频加载失败!')
-}
-document.body.appendChild(video)
+// const video = document.createElement("video")
+const video = document.querySelector('#video')
+// video.setAttribute("autoplay", "ture");
+// video.setAttribute("muted", "ture");
+// video.setAttribute("loop", "ture");
+// video.setAttribute("webkit-playsinline", "ture")
 
-console.log(video.clientWidth);
+// try {
+//   video.setAttribute("src", "http://www.runoob.com/try/demo_source/movie.mp4")
+// }
+// catch (err) {
+//   alert('视频加载失败!')
+// }
+// document.body.appendChild(video)
+
 
 class Badapple {
   canvas = document.querySelector('#canvas');
@@ -19,6 +22,7 @@ class Badapple {
   img = new Image()
   // img = new img()
   constructor(video) {
+    console.log(video);
     this.video = video
     this.canvas.width = video.clientWidth
     this.canvas.height = video.clientHeight
@@ -71,23 +75,22 @@ class Badapple {
       txtDiv.innerHTML = html;
     }
   }
-  init () {
+  init() {
     this.canvas.getContext('2d').drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height)
     //将canvas转换为图片文件
     this.img.src = this.canvas.toDataURL("image/png");
     //实际视频是4/3比例,
     this.img.width = this.video.clientWidth
     this.img.height = this.video.clientHeight
-    this.img.onload = ()=>{
+    this.img.onload = () => {
       this.draw()
     }
   }
 }
 
-
 const instance = new Badapple(video)
 instance.init()
 
-setTimeout(()=>{
+setInterval(() => {
   instance.init()
-},20000)
+}, 100)
