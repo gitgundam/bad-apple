@@ -3,15 +3,13 @@ let txtDiv = document.querySelector('#txt')
 let video = document.createElement("video")
 video.setAttribute("autoplay", "ture");
 video.setAttribute("webkit-playsinline", "ture")
-try 
-{
+try {
   video.setAttribute("src", "https://gitgundam.github.io/bad-apple/bad-apple.mp4")
 }
 catch (err) {
   alert('视频加载失败!')
 }
 document.body.appendChild(video)
-
 
 
 
@@ -89,9 +87,10 @@ const captureImage = () => {
   let canvas = document.createElement("canvas");
   canvas.width = videoWidth
   canvas.height = videoHeight
+  img.crossOrigin = 'Anonymous'
   canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height)
-  //将canvas转换为图片文件
   img.src = canvas.toDataURL("image/png");
+  //将canvas转换为图片文件
   //实际视频是4/3比例,
   img.width = videoWidth
   img.height = videoHeight
@@ -100,6 +99,6 @@ const captureImage = () => {
 video.addEventListener('loadeddata', () => {
   let timer = setInterval(() => {
     captureImage(1)
-  }, 1);
+  }, 1000);
 })
 
